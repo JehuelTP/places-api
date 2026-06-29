@@ -1,14 +1,6 @@
 from django.contrib import admin
-from django.contrib.admin.sites import NotRegistered
 
 from .models import Lugar, Horario, Foto, ComentarioLugar, Favorito
-
-
-for model in [Lugar, Horario, Foto, ComentarioLugar, Favorito]:
-    try:
-        admin.site.unregister(model)
-    except NotRegistered:
-        pass
 
 
 @admin.register(Lugar)

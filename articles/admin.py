@@ -1,11 +1,9 @@
-from django.apps import apps
 from django.contrib import admin
 
+from .models import Article
 
-models = apps.get_models()
 
-for model in models:
-    try:
-        admin.site.register(model)
-    except admin.sites.AlreadyRegistered:
-        pass
+@admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'author')
+    search_fields = ('title', 'description', 'body')
