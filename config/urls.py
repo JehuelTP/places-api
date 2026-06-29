@@ -20,6 +20,9 @@ urlpatterns = [
 
     # Comments
     path(f'{api_prefix}/', include('comments.urls')),
+
+    # Lugares
+    path(f'{api_prefix}/', include('lugares.urls')),
 ]
 
 if settings.DEBUG:
